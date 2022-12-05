@@ -12,7 +12,7 @@ mag = 1/length(x)*fftshift(abs(fft(x)));
 
 surpress = freq < -3.5 | freq > 3.5;
 mag(surpress) = mag(surpress)/100;
-zero = freq == 0;
+zero = -0.0001 < freq & freq < 0.0001;
 mag(zero) = mag(zero)/100;
 plot(freq , mag)
 
