@@ -1,4 +1,4 @@
-function maxMagFreqValue = make_freq_plot(x, Fs)
+function make_freq_plot(x, Fs)
 
 % make a frequency domain plot with frequency labels
 
@@ -15,8 +15,9 @@ mag(surpress) = mag(surpress)/100;
 zero = -0.0001 < freq & freq < 0.0001;
 mag(zero) = mag(zero)/100;
 plot(freq , mag)
-freqIndex = find(mag == max(mag), 1, 'last');
-maxMagFreqValue = freq(freqIndex);
+max(mag)
+freqIndex = find(mag == max(mag), 1, 'first');
+maxFreqValue = f(xIndex);
 
 ylabel('Magnitude of signal');
 xlabel('Frequency (Hz)');
